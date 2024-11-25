@@ -3,9 +3,9 @@ package main
 import (
 	kwikmedicalDbClient "github.com/jamieyoung5/kwikmedical-db-lib/pkg/client"
 	dbConfig "github.com/jamieyoung5/kwikmedical-db-lib/pkg/config"
+	"github.com/jamieyoung5/kwikmedical-emergency-processor/handler"
 	"github.com/jamieyoung5/kwikmedical-eventstream/pkg/eventutil"
 	"go.uber.org/zap"
-	"kwikmedical-ambulance-service/handler"
 	"os"
 )
 
