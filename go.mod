@@ -4,8 +4,8 @@ go 1.23.2
 
 require (
 	github.com/golang/protobuf v1.5.4
-	github.com/jamieyoung5/kwikmedical-db-lib v0.2.4
-	github.com/jamieyoung5/kwikmedical-eventstream v0.2.2
+	github.com/jamieyoung5/kwikmedical-db-lib v0.2.6
+	github.com/jamieyoung5/kwikmedical-eventstream v0.2.3
 	go.uber.org/zap v1.27.0
 	google.golang.org/protobuf v1.35.2
 )

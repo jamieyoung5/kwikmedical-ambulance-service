@@ -24,8 +24,14 @@ github.com/jackc/puddle/v2 v2.2.1 h1:RhxXJtFG022u4ibrCSMSiu5aOq1i77R3OHKNJj77OAk
 github.com/jackc/puddle/v2 v2.2.1/go.mod h1:vriiEXHvEE654aYKXXjOvZM39qJ0q+azkZFrfEOc3H4=
 github.com/jamieyoung5/kwikmedical-db-lib v0.2.4 h1:PZ/MUV1tChN4bknyIqSHM33LNU0kARVQiioIh3vnsh0=
 github.com/jamieyoung5/kwikmedical-db-lib v0.2.4/go.mod h1:bGrBsIOznDPjYxWlKhIi8N6TapGadN9Kd27O8D/yZ3k=
+github.com/jamieyoung5/kwikmedical-db-lib v0.2.5 h1:oZKha4CC7515SVepJW7+fNjr1cDh8dnEKSpKDyisycE=
+github.com/jamieyoung5/kwikmedical-db-lib v0.2.5/go.mod h1:bGrBsIOznDPjYxWlKhIi8N6TapGadN9Kd27O8D/yZ3k=
+github.com/jamieyoung5/kwikmedical-db-lib v0.2.6 h1:ujFCQhqa0hHUYo/lRQ7d+v5z6GTxoHDSDYGlX5x6OC8=
+github.com/jamieyoung5/kwikmedical-db-lib v0.2.6/go.mod h1:bGrBsIOznDPjYxWlKhIi8N6TapGadN9Kd27O8D/yZ3k=
 github.com/jamieyoung5/kwikmedical-eventstream v0.2.2 h1:MovA8jV/q+/AB/GbSClpbX/jWbJ9U+jCXEzVmTLqGV4=
 github.com/jamieyoung5/kwikmedical-eventstream v0.2.2/go.mod h1:EbtTl78MD/r9bV8UhyVrWevhxTzkbVl98ymc12e29ao=
+github.com/jamieyoung5/kwikmedical-eventstream v0.2.3 h1:7Pak2t9cKgwrVNytVdBj2hU+s1sx/h1Qs2yhc0y337g=
+github.com/jamieyoung5/kwikmedical-eventstream v0.2.3/go.mod h1:EbtTl78MD/r9bV8UhyVrWevhxTzkbVl98ymc12e29ao=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
 github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkryuEj+Srlc=
 github.com/jinzhu/now v1.1.5 h1:/o9tlHleP7gOFmsnYNz3RGnqzefHA47wQpKrrdTIwXQ=

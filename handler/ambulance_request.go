@@ -8,21 +8,33 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/anypb"
+	"google.golang.org/protobuf/types/known/timestamppb"
+	"time"
 )
 
 func generateNewAmbulanceRequest(
 	dbClient *client.KwikMedicalDBClient,
 	eventStreamConn pbSchema.EventStreamV1Client,
 	logger *zap.Logger,
-	emergency *pbSchema.EmergencyEvent) error {
+	emergency *pbSchema.EmergencyCall) error {
 
-	_, err := dbClient.GetNearestHospital(emergency.Location)
+	callId, err := dbClient.InsertNewEmergencyCall(emergency)
+	if err != nil {
+		return err
+	}
+
+	hospital, err := dbClient.GetNearestHospital(emergency.Location)
+	if err != nil {
+		return err
+	}
 
 	reqEvent, err := createNewRequestEvent(&pbSchema.AmbulanceRequest{
-		EmergencyCallId: emergency.EmergencyCallId,
+		EmergencyCallId: callId,
+		HospitalId:      int32(hospital.HospitalID),
 		Severity:        pbSchema.InjurySeverity_CRITICAL,
 		Location:        emergency.Location,
 		Status:          pbSchema.RequestStatus_PENDING,
+		CreatedAt:       timestamppb.New(time.Now().UTC()),
 	})
 	if err != nil {
 		logger.Error("Failed to create a new Ambulance Request", zap.Error(err))
@@ -49,7 +61,7 @@ func createNewRequestEvent(event *pbSchema.AmbulanceRequest) (*cloudeventspb.Clo
 		Id:          string(event.EmergencyCallId),
 		Source:      "/emergency-processor/ambulance-request",
 		SpecVersion: "1.0",
-		Type:        "type.googleapis.com/EmergencyCall",
+		Type:        "type.googleapis.com/AmbulanceRequest",
 		Data: &cloudeventspb.CloudEvent_ProtoData{
 			ProtoData: &anypb.Any{
 				Value: marshalledEvent,
