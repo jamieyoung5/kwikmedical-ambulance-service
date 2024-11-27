@@ -61,7 +61,7 @@ func createNewRequestEvent(event *pbSchema.AmbulanceRequest) (*cloudeventspb.Clo
 		Id:          string(event.EmergencyCallId),
 		Source:      "/emergency-processor/ambulance-request",
 		SpecVersion: "1.0",
-		Type:        "type.googleapis.com/AmbulanceRequest",
+		Type:        "AmbulanceRequest",
 		Data: &cloudeventspb.CloudEvent_ProtoData{
 			ProtoData: &anypb.Any{
 				Value: marshalledEvent,
